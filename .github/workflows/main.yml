@@ -1,0 +1,22 @@
+
+name: React CI/CD
+
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          cd myapp
+          ls -al
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 16
+      - run : npm install
+      - run : npm run build
+      - run : ls -al
+      
+          
