@@ -53,7 +53,7 @@ jobs:
     steps:
      - name: Checkout
        uses: actions/checkout@v3
-     - run : ls -al
+     - run : cd myapp && ls -al
         
   # Deployment job
   deploy:
