@@ -17,6 +17,7 @@ jobs:
           node-version: 16
       - run : |
           cd myapp
-          ls -al
+          npm install
+          npm run build && mv ./build ../
       
           
